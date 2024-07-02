@@ -35,6 +35,10 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Page<Student> findAll(final Integer gender, final Pageable pageable) {
         LOGGER.info("findAll - " + gender + " - " + pageable);
+        
+        if(gender == null){
+            return studentRepository.findAll(pageable);
+        }
         return studentRepository.findByGender(gender, pageable);
     }
 
