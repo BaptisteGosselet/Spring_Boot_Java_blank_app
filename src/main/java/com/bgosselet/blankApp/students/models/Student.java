@@ -26,8 +26,6 @@ public class Student {
     private String name;
 
     @Column(name = "Gender")
-    @Min(value = 1)
-    @Max(value = 2)
     private Integer gender;
 
 }
